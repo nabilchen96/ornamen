@@ -13,6 +13,12 @@ Store Home Page
     .navbar {
         background: white;
     }
+
+    @media only screen and (max-width: 600px) {
+        iframe{
+            height: 176px !important;
+        }
+    }
 </style>
 @endpush
 
@@ -30,7 +36,7 @@ Store Home Page
                         </ol>
                         <div class="carousel-inner" style="border-radius: 15px;">
                             <div class="carousel-item active">
-                                <img src="{{ asset('images/slider/omb_2.png') }}" alt="" class="d-block w-100">
+                                <img src="{{ asset('images/slider/omb_2.png') }}" alt="" class="img-carousel d-block w-100">
                             </div>
                             <div class="carousel-item">
                                 <iframe style="      

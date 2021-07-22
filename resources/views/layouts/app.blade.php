@@ -10,9 +10,19 @@
     <title>@yield('title')</title>
 
     <style>
-        /* nav, div.container, div.text-success{
-            content: 'Ornamen'
-        } */
+        .mobile-menu span{
+            display: none !important;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .mobile-menu:after {
+                content: 'Dashboard Area';
+            }
+
+            .mobile-menu-a {
+                text-align: left;
+            }
+        }
     </style>
 
     {{-- Style --}}
@@ -34,7 +44,7 @@
     @include('includes.footer')
 
     {{-- Script --}}
-   
+
     @stack('prepend-script')
     @include('includes.script')
     @stack('addon-script')
