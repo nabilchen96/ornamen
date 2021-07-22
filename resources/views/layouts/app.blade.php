@@ -22,6 +22,10 @@
             .mobile-menu-a {
                 text-align: left;
             }
+
+            .nav-item>.mx-2{
+               margin-left: 0 !important;
+            }
         }
     </style>
 

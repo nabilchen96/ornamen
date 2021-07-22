@@ -98,7 +98,7 @@ Store Home Page
                         <div class="categories-image">
                             <img src="{{ asset('images/plant-categories/004-cabbage.png') }}" alt="" class="w-100">
                         </div>
-                        <p class="categories-text">
+                        <p class="categories-text text-center">
                             Sayuran
                         </p>
                     </a>
