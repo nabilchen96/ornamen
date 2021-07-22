@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <title>@yield('title')</title>
 
+    <style>
+        /* nav, div.container, div.text-success{
+            content: 'Ornamen'
+        } */
+    </style>
+
     {{-- Style --}}
     @stack('prepend-style')
     @include('includes.style')
