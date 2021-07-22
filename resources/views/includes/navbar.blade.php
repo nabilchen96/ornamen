@@ -5,7 +5,7 @@
             
             <div class="mb-2 text-success">
                 <img src="{{ asset('images/logoornamen.jpg') }}" width="50px" alt="Logo">
-                &nbsp; Ornamen
+                Ornamen
             </div>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
