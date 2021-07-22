@@ -12,7 +12,7 @@
         <div class="container">
             <div class="row row-login">
                 <div class="col-lg-6">
-                    <img src="/images/bufallo.jpg"
+                    <img src="{{ asset('images/bufallo.jpg') }}"
                         style="border-radius: 15px; height: 100%; object-fit: cover; float:center;"
                         class="w-100 mb-lg-none" alt="">
                 </div>

@@ -8,7 +8,7 @@
         <div class="container mt-4">
             <div class="row row-login">
                 <div class="col-lg-6">
-                    <img src="/images/farmers-market.jpg"
+                    <img src="{{ asset('images/farmers-market.jpg') }}"
                         style="border-radius: 15px; height: 70%; object-fit: cover; float:center;"
                         class="w-100 mb-lg-none" alt="">
                 </div>
