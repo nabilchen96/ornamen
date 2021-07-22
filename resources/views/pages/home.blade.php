@@ -16,7 +16,19 @@ Store Home Page
 
     @media only screen and (max-width: 600px) {
         iframe{
-            height: 176px !important;
+            height: 300px !important;
+        }
+
+        .img-carousel{
+            height: 180px !important;
+            /* object-fit: cover; */
+            margin-top: 75px;
+            margin-bottom: 75px;
+        }
+
+        .carousel-for-image{
+            height: 300px;
+            background: black;
         }
     }
 </style>
@@ -35,7 +47,7 @@ Store Home Page
                             <li data-target="#storeCarousel" data-slide-to="2"></li>
                         </ol>
                         <div class="carousel-inner" style="border-radius: 15px;">
-                            <div class="carousel-item active">
+                            <div class="carousel-item carousel-for-image active">
                                 <img src="{{ asset('images/slider/omb_2.png') }}" alt="" class="img-carousel d-block w-100">
                             </div>
                             <div class="carousel-item">
