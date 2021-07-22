@@ -1,5 +1,17 @@
 @extends('layouts.app')
 
+@section('title')
+Login Page
+@endsection
+
+@push('addon-style')
+<style>
+    .navbar{
+        background: white;
+    }
+</style>
+@endpush
+
 @section('content')
 
 <div class="page-content page-auth">

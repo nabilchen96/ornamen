@@ -6,6 +6,11 @@ Register Page
 
 @push('addon-style')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
+<style>
+    .navbar{
+        background: white;
+    }
+</style>
 @endpush
 
 @section('content')
