@@ -1,4 +1,4 @@
-<nav style="box-shadow: rgb(0 0 0 / 7%) 0px 4px 6px -1px;"
+<nav style="box-shadow: rgb(0 0 0 / 7%) 0px 4px 6px -1px; background:white;"
     class="navbar navbar-expand-lg navbar-light navbar-store fixed-top navbar-fixed-top" data-aos="fade-down">
     <div class="container">
         <a href="{{ route('home') }}" class="navbar-brand">
