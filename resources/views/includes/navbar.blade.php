@@ -4,7 +4,7 @@
         <a href="{{ route('home') }}" class="navbar-brand">
             
             <div class="mb-2 text-success">
-                <img src="/images/logoornamen.jpg" width="50px" alt="Logo">
+                <img src="{{ asset('images/logoornamen.jpg') }}" width="50px" alt="Logo">
                 &nbsp; Organic Mangement Business
             </div>
         </a>
@@ -34,8 +34,11 @@
             <ul class="navbar-nav d-none d-lg-flex">
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown">
-                        <img src="{{ auth::user()->foto ? '/images/avatar.png' : '/foto_profil/'.auth::user()->foto }}"
-                            class="rounded-circle mr-2 profile-picture" alt="">
+                        @if (auth::user()->foto)
+                            <img src="{{ asset('foto_profil/'.auth::user()->foto) }}" class="rounded-circle mr-2 profile-picture" alt="">
+                        @else
+                            <img src="{{ asset('images/avatar.png') }}" class="rounded-circle mr-2 profile-picture" alt="">
+                        @endif
                         Hi, {{ strtok(auth::user()->name, " ") }}
                     </a>
                     <div class="dropdown-menu">
@@ -46,7 +49,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link d-inline-block mt-2">
-                        <img src="/images/Group.png" alt="">
+                        <img src="{{ asset('images/Group.png') }}" alt="">
                         <div class="card-badge">3</div>
                     </a>
                 </li>
