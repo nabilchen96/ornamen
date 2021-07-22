@@ -2,9 +2,10 @@
     class="navbar navbar-expand-lg navbar-light navbar-store fixed-top navbar-fixed-top" data-aos="fade-down">
     <div class="container">
         <a href="{{ route('home') }}" class="navbar-brand">
-            {{-- <img src="/images/logo.svg" alt="Logo"> --}}
+            
             <div class="mb-2 text-success">
-                Organic Management Business
+                <img src="/images/logoornamen.jpg" width="50px" alt="Logo">
+                &nbsp; Organic Mangement Business
             </div>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
@@ -25,14 +26,16 @@
                 </li>
                 <li class="nav-item">
                     @if (!auth::check())
-                        <a href="{{ route('login') }}" class="btn btn-success nav-link px-4 text-white">Sign In</a>
+                    <a href="{{ route('login') }}" class="btn btn-success nav-link px-4 text-white">Sign In</a>
                     @endif
                 </li>
             </ul>
+            @if (auth::check())
             <ul class="navbar-nav d-none d-lg-flex">
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown">
-                        <img src="{{ auth::user()->foto ? '/images/avatar.png' : '/foto_profil/'.auth::user()->foto }}" class="rounded-circle mr-2 profile-picture" alt="">
+                        <img src="{{ auth::user()->foto ? '/images/avatar.png' : '/foto_profil/'.auth::user()->foto }}"
+                            class="rounded-circle mr-2 profile-picture" alt="">
                         Hi, {{ strtok(auth::user()->name, " ") }}
                     </a>
                     <div class="dropdown-menu">
@@ -60,6 +63,7 @@
                     </div>
                 </li>
             </ul>
+            @endif
         </div>
     </div>
 </nav>
