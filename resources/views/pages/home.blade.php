@@ -21,9 +21,10 @@ Store Home Page
 
         .img-carousel{
             height: 180px !important;
-            /* object-fit: cover; */
-            margin-top: 75px;
-            margin-bottom: 75px;
+            object-position: left;
+            object-fit: cover;
+            margin-top: 60px;
+            margin-bottom: 60px;
         }
 
         .carousel-for-image{
