@@ -97,7 +97,7 @@ Store Home Page
                 <div class="col-6 col-md-3 col-lg-2">
                     <a href="#" class="component-categories d-block">
                         <div class="categories-image">
-                            <img src="/images/plant-categories/003-hot-pepper.png" alt="" class="w-100">
+                            <img src="{{ asset('images/plant-categories/003-hot-pepper.png') }}" alt="" class="w-100">
                         </div>
                         <p class="categories-text">
                             Kacang
@@ -107,7 +107,7 @@ Store Home Page
                 <div class="col-6 col-md-3 col-lg-2">
                     <a href="#" class="component-categories d-block">
                         <div class="categories-image">
-                            <img src="/images/plant-categories/025-carrot.png" alt="" class="w-100">
+                            <img src="{{ asset('images/plant-categories/025-carrot.png') }}" alt="" class="w-100">
                         </div>
                         <p class="categories-text">
                             Umbi
