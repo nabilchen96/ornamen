@@ -26,7 +26,7 @@ Store Home Page
                         </ol>
                         <div class="carousel-inner" style="border-radius: 15px;">
                             <div class="carousel-item active">
-                                <img src="/images/slider/omb_2.png" alt="" class="d-block w-100">
+                                <img src="{{ asset('images/slider/omb_2.png') }}" alt="" class="d-block w-100">
                             </div>
                             <div class="carousel-item">
                                 <iframe style="      
@@ -63,7 +63,7 @@ Store Home Page
                 <div class="col-6 col-md-3 col-lg-2">
                     <a href="#" class="component-categories d-block">
                         <div class="categories-image">
-                            <img src="/images/plant-categories/001-watermelon.png" alt="" class="w-100">
+                            <img src="{{ asset('images/plant-categories/001-watermelon.png') }}" alt="" class="w-100">
                         </div>
                         <p class="categories-text">
                             Buah
@@ -73,7 +73,7 @@ Store Home Page
                 <div class="col-6 col-md-3 col-lg-2">
                     <a href="#" class="component-categories d-block">
                         <div class="categories-image">
-                            <img src="images/plant-categories/004-cabbage.png" alt="" class="w-100">
+                            <img src="{{ asset('images/plant-categories/004-cabbage.png') }}" alt="" class="w-100">
                         </div>
                         <p class="categories-text">
                             Sayuran
@@ -83,7 +83,7 @@ Store Home Page
                 <div class="col-6 col-md-3 col-lg-2">
                     <a href="#" class="component-categories d-block">
                         <div class="categories-image">
-                            <img src="/images/plant-categories/002-corn.png" alt="" class="w-100">
+                            <img src="{{ asset('images/plant-categories/002-corn.png') }}" alt="" class="w-100">
                         </div>
                         <p class="categories-text">
                             Jagung
@@ -113,7 +113,7 @@ Store Home Page
                 <div class="col-6 col-md-3 col-lg-2">
                     <a href="#" class="component-categories d-block">
                         <div class="categories-image">
-                            <img src="/images/plant-categories/019-kiwi.png" alt="" class="w-100">
+                            <img src="{{ asset('images/plant-categories/019-kiwi.png') }}" alt="" class="w-100">
                         </div>
                         <p class="categories-text">
                             Bibit
@@ -137,7 +137,7 @@ Store Home Page
                 <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="100">
                     <a href="/details.html" class="component-products d-block">
                         <div class="products-thumbnail">
-                            <div class="products-image" style="background-image: url('/images/products/apel.jfif');">
+                            <div class="products-image" style="background-image: url('{{ asset('images/products/apel.jfif') }}');">
 
                             </div>
                         </div>
@@ -152,7 +152,7 @@ Store Home Page
                 <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="200">
                     <a href="/details.html" class="component-products d-block">
                         <div class="products-thumbnail">
-                            <div class="products-image" style="background-image: url('/images/products/pear.jfif');">
+                            <div class="products-image" style="background-image: url('{{ asset('images/products/pear.jfif') }}');">
 
                             </div>
                         </div>
@@ -167,7 +167,7 @@ Store Home Page
                 <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="300">
                     <a href="/details.html" class="component-products d-block">
                         <div class="products-thumbnail">
-                            <div class="products-image" style="background-image: url('/images/products/pisang.jpg');">
+                            <div class="products-image" style="background-image: url('{{ asset('images/products/pisang.jpg') }}');">
 
                             </div>
                         </div>
@@ -182,7 +182,7 @@ Store Home Page
                 <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="400">
                     <a href="/details.html" class="component-products d-block">
                         <div class="products-thumbnail">
-                            <div class="products-image" style="background-image: url('/images/products/jagung.jfif');">
+                            <div class="products-image" style="background-image: url('{{ asset('images/products/jagung.jfif') }}');">
 
                             </div>
                         </div>
@@ -197,7 +197,7 @@ Store Home Page
                 <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="500">
                     <a href="/details.html" class="component-products d-block">
                         <div class="products-thumbnail">
-                            <div class="products-image" style="background-image: url('/images/products/beras.jfif');">
+                            <div class="products-image" style="background-image: url('{{ asset('images/products/beras.jfif') }}');">
 
                             </div>
                         </div>
@@ -212,7 +212,7 @@ Store Home Page
                 <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="600">
                     <a href="/details.html" class="component-products d-block">
                         <div class="products-thumbnail">
-                            <div class="products-image" style="background-image: url('/images/products/jeruk.jpg');">
+                            <div class="products-image" style="background-image: url('{{ asset('images/products/jeruk.jpg') }}');">
 
                             </div>
                         </div>
@@ -227,7 +227,7 @@ Store Home Page
                 <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="700">
                     <a href="/details.html" class="component-products d-block">
                         <div class="products-thumbnail">
-                            <div class="products-image" style="background-image: url('/images/products/alpukat.jpg');">
+                            <div class="products-image" style="background-image: url('{{ asset('images/products/alpukat.jpg') }}');">
 
                             </div>
                         </div>
@@ -242,7 +242,7 @@ Store Home Page
                 <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="800">
                     <a href="/details.html" class="component-products d-block">
                         <div class="products-thumbnail">
-                            <div class="products-image" style="background-image: url('/images/products/cabe.jfif')">
+                            <div class="products-image" style="background-image: url('{{ asset('images/products/cabe.jfif') }}')">
 
                             </div>
                         </div>
@@ -273,27 +273,27 @@ Store Home Page
                         <div class="gallery-cell"
                             style="width: 300px; height: 500px; border-radius: 15px; margin-left: 15px;">
                             <img style="object-fit: cover; width: 300px; height: 500px; border-radius: 15px;"
-                                src="/images/webinar1.jpg" alt="">
+                                src="{{ asset('images/webinar1.jpg') }}" alt="">
                         </div>
                         <div class="gallery-cell"
                             style="width: 300px; height: 500px; background: green; border-radius: 15px; margin-left: 15px;">
                             <img style="object-fit: cover; width: 300px; height: 500px; border-radius: 15px;"
-                                src="/images/webinar2.jpg" alt="">
+                                src="{{ asset('images/webinar2.jpg') }}" alt="">
                         </div>
                         <div class="gallery-cell"
                             style="width: 300px; height: 500px; background: green; border-radius: 15px; margin-left: 15px;">
                             <img style="object-fit: cover; width: 300px; height: 500px; border-radius: 15px;"
-                                src="/images/webinar3.jpeg" alt="">
+                                src="{{ asset('images/webinar3.jpeg') }}" alt="">
                         </div>
                         <div class="gallery-cell"
                             style="width: 300px; height: 500px; background: green; border-radius: 15px; margin-left: 15px;">
                             <img style="object-fit: cover; width: 300px; height: 500px; border-radius: 15px;"
-                                src="/images/webinar4.jpg" alt="">
+                                src="{{ asset('images/webinar4.jpg') }}" alt="">
                         </div>
                         <div class="gallery-cell"
                             style="width: 300px; height: 500px; background: green; border-radius: 15px; margin-left: 15px;">
                             <img style="object-fit: cover; width: 300px; height: 500px; border-radius: 15px;"
-                                src="/images/webinar4.jpg" alt="">
+                                src="{{ asset('images/webinar4.jpg') }}" alt="">
                         </div>
                     </div>
                 </div>
@@ -308,7 +308,7 @@ Store Home Page
                     style="background: #f4f4f4; width: 100%; margin: auto; border-radius: 15px; padding: 20px;">
                     <div class="row">
                         <div class="col-lg-6" style="border-radius: 15px;">
-                            <img src="/images/market.jpg" style="border-radius: 15px;" class="w-100" alt="">
+                            <img src="{{ asset('images/market.jpg') }}" style="border-radius: 15px;" class="w-100" alt="">
                         </div>
                         <div class="col-lg-6">
                             <h1>Organic Management Business</h1>
