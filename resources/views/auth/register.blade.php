@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+Register Page
+@endsection
+
 @push('addon-style')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
 @endpush
