@@ -17,7 +17,7 @@ Store Cart Page
             <div class="card">
                 @if ($data->isEmpty())
                 <h3 class="text-center col-12 mt-4 mb-4">Belum Ada Barang di Keranjang Anda, <br>silahkan berbelanja
-                    terlebih dahulu                 <br><br><a href="{{ route('category.index') }}" class="btn btn-success">Halaman Shop</a>
+                    terlebih dahulu                 <br><br><a href="{{ route('categories') }}" class="btn btn-success">Halaman Shop</a>
                 </h3>
                 @else
                     <div class="card-body">
