@@ -1,6 +1,9 @@
 /node_modules
 /public/hot
 /public/storage
+/public/foto_produk
+/public/foto_profil
+/public/webinar
 /storage/*.key
 /vendor
 .env
