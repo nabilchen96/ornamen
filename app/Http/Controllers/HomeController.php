@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\JualHasil;
 
 class HomeController extends Controller
 {
@@ -13,6 +14,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('pages.home');
+
+        $produk = JualHasil::all();
+
+        $produk = $produk->take(8);
+
+        return view('pages.home')->with('produk', $produk);
     }
 }

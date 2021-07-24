@@ -3,11 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Keuangan;
-use DB;
-use Auth;
+use App\JualHasil;
 
-class KeuanganController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,10 +14,9 @@ class KeuanganController extends Controller
      */
     public function index()
     {
-        
-        $data = Keuangan::where('id', auth::user()->id)->get();
+        $produk = JualHasil::paginate(16);
 
-        return view('pages.keuangan')->with('data', $data);
+        return view('pages.category')->with('produk', $produk);
     }
 
     /**
@@ -40,15 +37,7 @@ class KeuanganController extends Controller
      */
     public function store(Request $request)
     {
-        Keuangan::create([
-            'id'            => $request->id,
-            'keterangan'    => $request->keterangan,
-            'jenis_saldo'   => $request->jenis_saldo,
-            'biaya'         => $request->biaya,
-            'tanggal'       => $request->tanggal
-        ]);
-
-        return back()->with(['sukses' => 'Data berhasil disimpan!']);
+        //
     }
 
     /**
@@ -80,22 +69,9 @@ class KeuanganController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
-
-        // dd($request);
-        
-        $data = Keuangan::find($request->id_keuangan);
-
-        $data->update([
-            'id'            => $request->id,
-            'keterangan'    => $request->keterangan,
-            'jenis_saldo'   => $request->jenis_saldo,
-            'biaya'         => $request->biaya,
-            'tanggal'       => $request->tanggal
-        ]);
-
-        return back()->with(['sukses' => 'Data berhasil diupdate!']);
+        //
     }
 
     /**
@@ -106,9 +82,6 @@ class KeuanganController extends Controller
      */
     public function destroy($id)
     {
-        $data = Keuangan::find($id);
-        $data->delete();
-
-        return back()->with(['sukses' => 'Data berhasil dihapus!']);
+        //
     }
 }

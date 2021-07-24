@@ -21,7 +21,6 @@ Route::get('/home', 'HomeController@index');
 
 Route::get('/categories', 'CategoryController@index')->name('categories');
 Route::get('/details/{id}', 'DetailController@index')->name('detail');
-Route::get('/cart', 'CartController@index')->name('cart');
 Route::get('/success', 'CartController@success')->name('success');
 
 //kontak
@@ -52,9 +51,22 @@ Route::resource('inventory', 'InventoryController');
 
 //keuangan
 Route::resource('keuangan', 'KeuanganController');
+Route::get('hapuskeuangan/{id}', 'KeuanganController@destroy');
+Route::post('updatekeuangan', 'KeuanganController@update');
+
+//Jual Hasil
+Route::get('jualhasil', 'JualHasilController@index');
+Route::post('simpanjualhasil', 'JualHasilController@store');
+Route::post('updatejualhasil', 'JualHasilController@update');
+Route::post('updatestokjualhasil', 'JualHasilController@updatestok');
 
 //daftar_inventaris
 Route::get('daftar_inventaris/{jenis_inventaris}', 'DaftarInventarisController@index');
+
+//cart
+Route::get('/cart', 'CartController@index')->name('cart');
+Route::post('simpancart', 'CartController@store');
+Route::get('/hapuscart/{id}', 'CartController@destroy');
 
 
 Route::prefix('admin')->namespace('Admin')->group(function(){

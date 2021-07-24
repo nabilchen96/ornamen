@@ -25,7 +25,7 @@ Login Page
                         class="w-100 mb-lg-none" alt="">
                 </div>
                 <div class="col-lg-6">
-                    <h2>Masuk untuk Membeli<br>atau Menjual Hasil Panen</h2>
+                    <h2>Masuk untuk Membeli<br>atau Menjual Hasil Panen Organik</h2>
                     <form method="POST" action="{{ route('login') }}" class="mt-4">
                         @csrf
                         <div class="form-group">

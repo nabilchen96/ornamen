@@ -19,9 +19,9 @@
             <div class="row">
                 <div class="col-12 mb-2">
                     <nav>
-                        <ol class="breadcrumb mb-4" style="border-radius: 8px;">
+                        <ol class="breadcrumb" style="border-radius: 8px;">
                             <li class="breadcrumb-item">
-                                <h2>Halaman Konsultasi</h2>
+                                <h3>Halaman Konsultasi</h3>
                             </li>
                         </ol>
                     </nav>
@@ -32,12 +32,12 @@
 
     <section>
         <div class="container"
-            style="background:#f8f9fa !important; padding-top: 20px; padding-bottom: 20px; border-radius: 15px; width: 74%; margin-bottom: 10px;">
+            style="background:#f8f9fa !important; padding-top: 20px; padding-bottom: 20px; border-radius: 15px; width: 82%; margin-bottom: 10px;">
             <h4>Pertanyaan: {{ $data[0]->judul_konsultasi }}</h4>
             Dibuat Tanggal: {{ date('d-m-Y', strtotime($data[0]->konsultasi_dibuat)) }}
         </div>
         <div class="container"
-            style="background:#f8f9fa !important; padding-top: 20px; border-radius: 15px; width: 74%">
+            style="background:#f8f9fa !important; padding-top: 20px; border-radius: 15px; width: 82%">
             @foreach ($data as $item)
             @if ($item->pemilik_pesan == 'user')
             <div class="row">

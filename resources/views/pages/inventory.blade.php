@@ -15,9 +15,9 @@
             <div class="row">
                 <div class="col-12 mb-2">
                     <nav>
-                        <ol class="breadcrumb mb-4" style="border-radius: 8px;">
+                        <ol class="breadcrumb" style="border-radius: 8px;">
                             <li class="breadcrumb-item">
-                                <h2>Halaman Inventory</h2>
+                                <h3>Halaman Inventory</h3>
                             </li>
                         </ol>
                     </nav>
@@ -30,46 +30,52 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <a href="#" class="btn btn-primary mb-4" data-toggle="modal" data-target=".modal">
-                        Tambah Stok
-                    </a>
-                    <div class="table-responsive" style="margin-top: 20px;">
-                        <table class="table table-hover table-striped scroll-horizontal-vertical w-100 crudTable"
-                            id="crudTable">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Nama Stok</th>
-                                    <th>Jenis Inventaris</th>
-                                    <th>Sisa Stok</th>
-                                    {{-- <th></th> --}}
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($data as $k => $item)
-                                <tr>
-                                    <td>{{ $k+1 }}</td>
-                                    <td>{{ $item->nama_inventaris }}</td>
-                                    <td>{{ $item->jenis_inventaris }}</td>
-                                    <td>{{ $item->total_stok }}</td>
-                                    {{-- <td>
-                                            <a href="#" class="btn btn-success">Detail</a>
-                                        </td> --}}
-                                </tr>
-                                @endforeach
-                                {{-- <tr>
-                                    <td>1</td>
-                                    <td>Bibit Jagung</td>
-                                    <td>Bibit</td>
-                                    <td>100</td>
-                                    <td>0</td>
-                                    <td>100</td>
-                                    <td>
-                                        <a href="{{ route('inventory.destroy', 1) }}" class="btn btn-danger">Hapus</a>
-                                </td>
-                                </tr> --}}
-                            </tbody>
-                        </table>
+                    <div class="card">
+                        <div class="card-body">
+                            <a href="#" class="btn btn-primary mb-4" data-toggle="modal" data-target=".modal">
+                                Tambah Stok
+                            </a>
+                            <div class="table-responsive" style="margin-top: 20px;">
+                                <table
+                                    class="table table-hover table-striped scroll-horizontal-vertical w-100 crudTable"
+                                    id="crudTable">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Nama Stok</th>
+                                            <th>Jenis Inventaris</th>
+                                            <th>Sisa Stok</th>
+                                            {{-- <th></th> --}}
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($data as $k => $item)
+                                        <tr>
+                                            <td>{{ $k+1 }}</td>
+                                            <td>{{ $item->nama_inventaris }}</td>
+                                            <td>{{ $item->jenis_inventaris }}</td>
+                                            <td>{{ $item->total_stok }}</td>
+                                            {{-- <td>
+                                                    <a href="#" class="btn btn-success">Detail</a>
+                                                </td> --}}
+                                        </tr>
+                                        @endforeach
+                                        {{-- <tr>
+                                            <td>1</td>
+                                            <td>Bibit Jagung</td>
+                                            <td>Bibit</td>
+                                            <td>100</td>
+                                            <td>0</td>
+                                            <td>100</td>
+                                            <td>
+                                                <a href="{{ route('inventory.destroy', 1) }}" class="btn
+                                        btn-danger">Hapus</a>
+                                        </td>
+                                        </tr> --}}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

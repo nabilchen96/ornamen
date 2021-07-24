@@ -7,6 +7,7 @@ use App\InventarisUser;
 use auth;
 use DB;
 use App\InventarisMasuk;
+use App\Keuangan;
 
 class InventoryController extends Controller
 {
@@ -50,11 +51,24 @@ class InventoryController extends Controller
             'biaya'         => 'required'
         ]);
 
-        InventarisMasuk::create([
+        $create_data = InventarisMasuk::create([
             'id'            => $request->id,
             'id_inventaris' => $request->id_inventaris,
             'stok_masuk'    => $request->stok_masuk,
             'biaya'         => $request->biaya,
+        ]);
+
+        $data = DB::table('daftar_inventaris')->where('id_inventaris', $request->id_inventaris)->first();
+
+        // dd($create_data->id);
+
+        Keuangan::create([
+            'id'            => $request->id,
+            'keterangan'    => 'Stok Inventaris '.$data->jenis_inventaris.' '.$data->nama_inventaris,
+            'jenis_saldo'   => 'keluar',
+            'id_keluar'     => $create_data->id,
+            'biaya'         => $request->biaya,
+            'tanggal'       => now()
         ]);
 
 

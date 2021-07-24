@@ -24,6 +24,18 @@
                 <li class="nav-item">
                     <a href="{{ route('kontak.index') }}" class="nav-link">Kontak</a>
                 </li>
+                @if (auth::check())
+                <li class="nav-item">
+                    <a href="{{ route('kontak.index') }}" class="nav-link">Pesanan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();"> Logout</a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                </li>
+                @endif
                 <li class="nav-item">
                     @if (!auth::check())
                     <a href="{{ route('login') }}" class="btn btn-success nav-link px-4 text-white">Sign In</a>
@@ -49,9 +61,13 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link d-inline-block mt-2">
+                    <a href="{{ url('cart') }}" class="nav-link d-inline-block mt-2">
                         <img src="{{ asset('images/Group.png') }}" alt="">
-                        <div class="card-badge">3</div>
+                        <div class="card-badge">
+                            {{ 
+                                DB::table('carts')->where('id', auth::user()->id)->where('status', '0')->count()
+                            }}
+                        </div>
                     </a>
                 </li>
             </ul>
@@ -66,7 +82,7 @@
                         Cart
                     </div>
                 </li>
-            </ul>
+            </ul>            
             @endif
         </div>
     </div>
@@ -99,7 +115,7 @@
                             href="{{ route('kemitraan.index') }}">Kemitraan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="mobile-menu-a nav-link mx-2" href="#">Jual Hasil Panen</a>
+                        <a class="mobile-menu-a nav-link mx-2" href="{{ url('jualhasil') }}">Jual Hasil Panen</a>
                     </li>
                     <li class="nav-item">
                         <a class="mobile-menu-a nav-link mx-2 {{ (request()->is('inventory')) ? 'active' : ''}}"

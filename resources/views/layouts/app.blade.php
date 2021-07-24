@@ -10,8 +10,20 @@
     <title>@yield('title')</title>
 
     <style>
+        body{
+            background: #a0d46869 !important;
+        }
+
+        .card{
+            box-shadow: none !important;
+        }
+
         .mobile-menu span{
             display: none !important;
+        }
+
+        .navbar,.nav{
+            font-weight: 900;
         }
 
         @media only screen and (max-width: 600px) {

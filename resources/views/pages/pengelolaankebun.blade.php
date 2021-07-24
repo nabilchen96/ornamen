@@ -14,9 +14,9 @@
             <div class="row">
                 <div class="col-12 mb-2">
                     <nav>
-                        <ol class="breadcrumb mb-4" style="border-radius: 8px;">
+                        <ol class="breadcrumb" style="border-radius: 8px;">
                             <li class="breadcrumb-item">
-                                <h2>Halaman Pengelolaan Kebun</h2>
+                                <h3>Pengelolaan Kebun</h3>
                             </li>
                         </ol>
                     </nav>
@@ -28,25 +28,27 @@
     <section>
         <div class="container">
             <div class="">
-                <div class="">
-                    <a href="#" class="btn btn-primary mb-4" data-toggle="modal" data-array="" data-target=".modal">
-                        Tambah Kebun
-                    </a>
-                    <div class="table-responsive" style="margin-top: 20px;">
-                        <table class="table table-hover table-striped scroll-horizontal-vertical w-100" id="crudTable">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Tanaman</th>
-                                    <th>Pupuk</th>
-                                    <th>Media Tanam</th>
-                                    <th>Luas Tanah</th>
-                                    <th>Mulai Tanam</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($kelola_tanaman as $k => $item)
+                <div class="card">
+                    <div class="card-body">
+                        <a href="#" class="btn btn-primary" data-toggle="modal" data-array="" data-target=".modal">
+                            Tambah Kebun
+                        </a>
+                        <div class="table-responsive" style="margin-top: 20px;">
+                            <table class="table table-hover table-striped scroll-horizontal-vertical w-100"
+                                id="crudTable">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Tanaman</th>
+                                        <th>Pupuk</th>
+                                        <th>Media Tanam</th>
+                                        <th>Luas Tanah</th>
+                                        <th>Mulai Tanam</th>
+                                        {{-- <th></th> --}}
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($kelola_tanaman as $k => $item)
                                     <tr>
                                         <td>{{ $k+1 }}</td>
                                         <td>{{ $item->nama_tanaman }}</td>
@@ -54,13 +56,14 @@
                                         <td>{{ $item->nama_media }}</td>
                                         <td>{{ $item->luas_tanah }} M<sup>2</sup></td>
                                         <td>{{ $item->waktu_tanam }}</td>
-                                        <td>
-                                            <a href="#" class="btn btn-success">Edit</a>
-                                        </td>
+                                        {{-- <td>
+                                                <a href="#" class="btn btn-success">Edit</a>
+                                            </td> --}}
                                     </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -87,7 +90,8 @@
                                     <label for="">Tanaman / Stok</label>
                                     <select name="id_tanaman" class="form-control" required>
                                         @foreach ($bibit as $bibit)
-                                        <option value="{{ $bibit->id_inventaris_user }}">{{ $bibit->nama_inventaris }} / ({{ $bibit->total_stok }})
+                                        <option value="{{ $bibit->id_inventaris_user }}">{{ $bibit->nama_inventaris }} /
+                                            ({{ $bibit->total_stok }})
                                             Batang</option>
                                         @endforeach
                                     </select>
@@ -104,7 +108,8 @@
                                     <label for="">Jenis Pupuk / Stok</label>
                                     <select name="id_pupuk" class="form-control" required>
                                         @foreach ($pupuk as $pupuk)
-                                        <option value="{{ $pupuk->id_inventaris_user }}">{{ $pupuk->nama_inventaris }} / ({{ $pupuk->total_stok }})
+                                        <option value="{{ $pupuk->id_inventaris_user }}">{{ $pupuk->nama_inventaris }} /
+                                            ({{ $pupuk->total_stok }})
                                             Kg</option>
                                         @endforeach
                                     </select>
@@ -121,7 +126,8 @@
                                     <label for="">Media Tanam / Stok</label>
                                     <select name="id_media_tanam" class="form-control" required>
                                         @foreach ($media_tanam as $media)
-                                        <option value="{{ $media->id_inventaris_user }}">{{ $media->nama_inventaris }} / ({{ $media->total_stok }})
+                                        <option value="{{ $media->id_inventaris_user }}">{{ $media->nama_inventaris }} /
+                                            ({{ $media->total_stok }})
                                             Item</option>
                                         @endforeach
                                     </select>

@@ -15,9 +15,9 @@
             <div class="row">
                 <div class="col-12 mb-2">
                     <nav>
-                        <ol class="breadcrumb mb-4" style="border-radius: 8px;">
+                        <ol class="breadcrumb" style="border-radius: 8px;">
                             <li class="breadcrumb-item">
-                                <h2>Halaman Aktivitas dan Kegiatan</h2>
+                                <h3>Aktivitas dan Kegiatan</h3>
                             </li>
                         </ol>
                     </nav>
@@ -30,6 +30,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item" role="presentation">
                             <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
@@ -88,6 +90,8 @@
                         </div>
                     </div>
                 </div>
+                </div>
+            </div>
             </div>
         </div>
     </section>

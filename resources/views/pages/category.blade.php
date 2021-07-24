@@ -4,6 +4,10 @@
 Store Category Page
 @endsection
 
+@push('addon-style')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
+@endpush
+
 @section('content')
 <div class="page-content page-home">
     <br>
@@ -103,126 +107,25 @@ Store Category Page
             </div>
 
             <div class="row">
+                @foreach ($produk as $k => $produk)
                 <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="100">
-                    <a href="#" data-toggle="modal" data-target="#exampleModalLong" class="component-products d-block">
+                    <a href="#" data-target=".modal" data-toggle="modal" data-array="{{ $produk }}"
+                        class="component-products d-block">
                         <div class="products-thumbnail">
-                            <div class="products-image" style="background-image: url('/images/products/apel.jfif');">
+                            <div class="products-image"
+                                style="background-image: url('{{ asset('foto_produk') }}/{{ $produk->foto_produk }}');">
 
                             </div>
                         </div>
                         <div class="products-text">
-                            Apel Fuji Sak Super (kg)
+                            {{ $produk->judul_keterangan }}
                         </div>
                         <div class="products-price">
-                            Rp. 50.000
+                            Rp. {{ number_format($produk->harga) }}
                         </div>
                     </a>
                 </div>
-                <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-                    <a href="/details.html" class="component-products d-block">
-                        <div class="products-thumbnail">
-                            <div class="products-image" style="background-image: url('/images/products/pear.jfif');">
-
-                            </div>
-                        </div>
-                        <div class="products-text">
-                            Buah Pear Madu Termurah
-                        </div>
-                        <div class="products-price">
-                            Rp. 27.000
-                        </div>
-                    </a>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-                    <a href="/details.html" class="component-products d-block">
-                        <div class="products-thumbnail">
-                            <div class="products-image" style="background-image: url('/images/products/pisang.jpg');">
-
-                            </div>
-                        </div>
-                        <div class="products-text">
-                            Pisang Pertandan Manis
-                        </div>
-                        <div class="products-price">
-                            Rp. 25.000
-                        </div>
-                    </a>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="400">
-                    <a href="/details.html" class="component-products d-block">
-                        <div class="products-thumbnail">
-                            <div class="products-image" style="background-image: url('/images/products/jagung.jfif');">
-
-                            </div>
-                        </div>
-                        <div class="products-text">
-                            Jagung Kering
-                        </div>
-                        <div class="products-price">
-                            Rp. 20.000
-                        </div>
-                    </a>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="500">
-                    <a href="/details.html" class="component-products d-block">
-                        <div class="products-thumbnail">
-                            <div class="products-image" style="background-image: url('/images/products/beras.jfif');">
-
-                            </div>
-                        </div>
-                        <div class="products-text">
-                            Beras Curah Serang (kg)
-                        </div>
-                        <div class="products-price">
-                            Rp. 10.000
-                        </div>
-                    </a>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="600">
-                    <a href="/details.html" class="component-products d-block">
-                        <div class="products-thumbnail">
-                            <div class="products-image" style="background-image: url('/images/products/jeruk.jpg');">
-
-                            </div>
-                        </div>
-                        <div class="products-text">
-                            Jeruk Nanfeng Impor
-                        </div>
-                        <div class="products-price">
-                            Rp. 6000
-                        </div>
-                    </a>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="700">
-                    <a href="/details.html" class="component-products d-block">
-                        <div class="products-thumbnail">
-                            <div class="products-image" style="background-image: url('/images/products/alpukat.jpg');">
-
-                            </div>
-                        </div>
-                        <div class="products-text">
-                            Alpukat Mentega Super
-                        </div>
-                        <div class="products-price">
-                            Rp 24.000
-                        </div>
-                    </a>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="800">
-                    <a href="/details.html" class="component-products d-block">
-                        <div class="products-thumbnail">
-                            <div class="products-image" style="background-image: url('/images/products/cabe.jfif')">
-
-                            </div>
-                        </div>
-                        <div class="products-text">
-                            Cabe Merah Kriting (kg)
-                        </div>
-                        <div class="products-price">
-                            Rp. 9.999
-                        </div>
-                    </a>
-                </div>
+                @endforeach
             </div>
 
         </div>
@@ -233,43 +136,95 @@ Store Category Page
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Apel Fuji Sak Super (kg) </h5>
+                    <h5 class="modal-title" id="exampleModalLongTitle">Add to Cart</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <a href="#" class="component-products d-block">
-                                <div class="products-thumbnail">
-                                    <div class="products-image" style="background-image: url('/images/products/apel.jfif');">
-        
+                <form id="formtemplate" method="POST">
+                    @csrf
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <a href="#" class="component-products d-block">
+                                    <div class="products-thumbnail">
+                                        <div class="products-image" id="gambar"
+                                            style="background-image: url('/images/products/apel.jfif');">
+
+                                        </div>
                                     </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="products-text" id="judul_keterangan">
+
                                 </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="products-text">
-                                Apel Fuji Sak Super (kg)
-                            </div>
-                            <div class="products-price text-danger">
-                                Rp. 50.000
-                            </div>
-                            <hr>
-                            <div class="form-group">
-                                <label for="">QTY</label>
-                                <input type="number" class="form-control">
+                                <div class="products-price text-danger" id="harga">
+
+                                </div>
+                                <div class="products-price text-danger" id="stok">
+
+                                </div>
+                                <hr>
+                                <div class="form-group">
+                                    <label for="">QTY</label>
+                                    <input type="number" name="jumlah" class="form-control">
+                                </div>
+                                <input type="hidden" name="id_jual_hasil" id="id_jual_hasil">
+                                <input type="hidden" name="harga" id="harga_var">
+                                <p>*Login untuk membeli</p>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-success">+ Keranjang</button>
-                </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        @if (auth::check())
+                        <button type="submit" class="btn btn-success">+ Keranjang</button>
+                        @else
+                        <a ref="{{ route('login') }}" class="btn btn-success text-white">Login</a>
+                        @endif
+                    </div>
+                </form>
             </div>
         </div>
     </div>
 </div>
 @endsection
+
+@push('addon-script')
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+</script>
+<script>
+    @if($message = Session::get('sukses'))
+        toastr.success("{{ $message }}")
+    @elseif($message = Session::get('gagal'))
+        toastr.error("{{ $message }}")
+    @elseif($errors->any())
+        @foreach ($errors->all() as $error)
+            toastr.error("{{ $error }}")
+        @endforeach
+    @endif
+</script>
+<script>
+    $('.modal').on('show.bs.modal', function (event) {
+      var button  = $(event.relatedTarget)
+      var data    = button.data('array');
+      var modal   = $(this)
+
+      if(data){
+        $('#formtemplate').attr('action', "{{ url('simpancart') }}").trigger('reset')
+
+        modal.find('#judul_keterangan').html(data.judul_keterangan)
+        modal.find('#harga').html('Rp. '+Intl.NumberFormat().format(data.harga)+' per '+data.ukuran_jual)
+        modal.find('#stok').html('Stok Tersisa: '+data.stok+' '+data.ukuran_jual)
+        modal.find('#gambar').css('background-image', 'url("{{ asset("foto_produk") }}/'+data.foto_produk+'")')
+        modal.find('#id_jual_hasil').val(data.id_jual_hasil)
+        modal.find('#harga_var').val(data.harga)
+      }
+    })
+</script>
+
+@endpush
