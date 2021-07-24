@@ -17,9 +17,11 @@ Store Cart Page
             <div class="card">
                 @if ($data->isEmpty())
                 <h3 class="text-center col-12 mt-4 mb-4">Belum Ada Barang di Keranjang Anda, <br>silahkan berbelanja
-                    terlebih dahulu                 <br><br><a href="{{ route('categories') }}" class="btn btn-success">Halaman Shop</a>
+                    terlebih dahulu <br><br><a href="{{ route('categories') }}" class="btn btn-success">Halaman Shop</a>
                 </h3>
                 @else
+                <form action="{{ route('pesanan.store') }}" method="POST">
+                    @csrf
                     <div class="card-body">
                         <div class="row" data-aos="fade-up" data-aos-delay="100">
                             <div class="col-12 table-responsive">
@@ -38,6 +40,10 @@ Store Cart Page
                                     <tbody>
                                         <?php $total = 0; ?>
                                         @foreach ($data as $item)
+                                        <input type="hidden" name="id_jual_hasil[]" value="{{ $item->id_jual_hasil }}">
+                                        <input type="hidden" name="jumlah[]" value="{{ $item->jumlah }}">
+                                        <input type="hidden" name="harga[]" value="{{ $item->harga }}">
+                                        <input type="hidden" name="id_cart[]" value="{{ $item->id_cart }}">
                                         <tr>
                                             <td><img src="{{ asset('foto_produk') }}/{{ $item->foto_produk }}"
                                                     class="cart-image"></td>
@@ -50,8 +56,6 @@ Store Cart Page
                                             </td>
                                             <td style="width: 10%">
                                                 <div class="product-title text-center">
-                                                    {{-- <input type="number" class="form-control" value="{{ $item->jumlah }}">
-                                                    --}}
                                                     {{ $item->jumlah }}
                                                 </div>
                                             </td>
@@ -89,18 +93,21 @@ Store Cart Page
                                     </tbody>
                                 </table>
                             </div>
-                            {{--  --}}
                             <div class="col-12 mt-4 form-group">
                                 <label for="">Alamat Pengiriman</label>
-                                <textarea name="alamat" class="form-control" rows="5"
+                                <textarea class="form-control" rows="5"
                                     readonly>{{ auth::user()->alamat }}</textarea>
                                 <p class="text-danger">*Lakukan perubahan alamat di halaman profil</p>
                             </div>
+                            <input type="hidden" name="total_harga" value="{{ $total }}">
+                            <input type="hidden" name="biaya_pengiriman" value="{{ 100000 }}">
+                            <input type="hidden" name="grand_total" value="{{ $total + 100000 }}">
                         </div>
                     </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-success">CheckOut</button>
                     </div>
+                </form>
                 @endif
             </div>
 

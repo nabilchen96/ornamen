@@ -69,6 +69,9 @@ Route::post('simpancart', 'CartController@store');
 Route::get('/hapuscart/{id}', 'CartController@destroy');
 
 
+Route::resource('pesanan', 'PesananController');
+
+
 Route::prefix('admin')->namespace('Admin')->group(function(){
     
     Route::get('/', 'DashboardController@index')->name('admin-dashboard');

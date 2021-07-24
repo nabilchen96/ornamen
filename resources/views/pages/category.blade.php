@@ -172,7 +172,6 @@ Store Category Page
                                 </div>
                                 <input type="hidden" name="id_jual_hasil" id="id_jual_hasil">
                                 <input type="hidden" name="harga" id="harga_var">
-                                <p>*Login untuk membeli</p>
                             </div>
                         </div>
                     </div>
@@ -181,7 +180,7 @@ Store Category Page
                         @if (auth::check())
                         <button type="submit" class="btn btn-success">+ Keranjang</button>
                         @else
-                        <a ref="{{ route('login') }}" class="btn btn-success text-white">Login</a>
+                        <a ref="{{ route('login') }}" class="btn btn-success text-white">Login untuk membeli</a>
                         @endif
                     </div>
                 </form>

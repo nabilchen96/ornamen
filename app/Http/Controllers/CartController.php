@@ -23,7 +23,8 @@ class CartController extends Controller
                         'carts.harga as total_harga',
                         'jual_hasils.foto_produk',
                         'carts.jumlah',
-                        'carts.id_cart'
+                        'carts.id_cart',
+                        'jual_hasils.id_jual_hasil'
                     )
                     ->where('carts.id', auth::user()->id)
                     ->where('carts.status', '0')

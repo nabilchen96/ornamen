@@ -26,7 +26,7 @@
                 </li>
                 @if (auth::check())
                 <li class="nav-item">
-                    <a href="{{ route('kontak.index') }}" class="nav-link">Pesanan</a>
+                    <a href="{{ route('pesanan.index') }}" class="nav-link">Pesanan</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
